@@ -1,0 +1,106 @@
+/* Add your existing CSS styles here or use a shared stylesheet */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color:  #e98f09;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #750000;
+    color: #e9ec12;
+    text-align: center;
+    padding: 0 auto;
+}
+
+section {
+    max-width: 550px;
+    margin: 10px auto;
+    background-color: #2900be;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    text-align: center;
+    color: rgb(236, 188, 29);
+    font-weight: bold;
+}
+
+input {
+    border-radius: 20px;
+    width: 80%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    
+    background-color: #970000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#searchResult {
+    margin-top: 20px;
+}
+
+.logo{
+    width: 60pxpx;
+}
+h3{
+    color: white;
+    text-align: center;
+}
+table{
+    margin: 0;
+    padding: 0px;
+    text-align: center;
+    color: white;
+}
+img{
+    
+    width: 200px;
+    
+}
+th{
+    margin: 0px;
+    padding: 30px;
+}
+.footer{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Add this in your CSS or within a <style> tag */
+#scanner-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Student</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+    <header>
+        <img    class="logo"     src="./knslogo1.png" alt="Logo">
+        <h1>H/katuwana National School Prefect Marking</h1>
+        
+    </header>
+
+    <section>
+        <label for="searchInput">Search by Student ID:</label>
+        <input type="text" id="searchInput" name="searchInput" placeholder="Enter Student ID">
+        <button onclick="searchStudent()">Search</button>
+
+        <div id="searchResult">
+            <!-- Display search results here -->
+        </div>
+    </section>
+
+    <div class="footer">
+        &copy; 2024 Student Profile 
+    </div>
+<!-- Add these script tags in your HTML file -->
+<script src="https://cdn.jsdelivr.net/npm/quagga@0.12.1/dist/quagga.min.js"></script>
+<!-- Add this in your HTML body -->
+<div id="scanner-container"></div>
+
+<script>
+    Quagga.init({
+        inputStream: {
+            name: "Live",
+            type: "LiveStream",
+            target: document.querySelector("#scanner-container"),
+            constraints: {
+                width: 480,
+                height: 320,
+                facingMode: "environment", // or "user" for the front camera
+            },
+        },
+        decoder: {
+            readers: ["code_128_reader", "ean_reader", "ean_8_reader"],
+        },
+    }, function(err) {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        console.log("Initialization finished. Ready to start");
+        Quagga.start();
+    });
+
+    Quagga.onDetected(function(result) {
+        // Handle the detected QR code data
+        var code = result.codeResult.code;
+        console.log("Detected code: " + code);
+
+        // Perform a search with the detected code
+        performSearch(code);
+    });
+
+    function performSearch(code) {
+        // Implement your search functionality here
+        // You can use the scanned code to search or navigate to a specific URL
+        console.log("Performing search with code: " + code);
+        // Example: Redirect to a search page
+        window.location.href = "search?q=" + code;
+    }
+</script>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
